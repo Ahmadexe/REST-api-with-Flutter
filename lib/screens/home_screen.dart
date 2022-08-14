@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: 10,
         itemBuilder: ((context, index) {
         return Container(
-          child: PostCard(),
+          child: PostCard(title: "Title", body: "Body here",),
         );
       }))
     );

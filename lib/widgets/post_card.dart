@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PostCard extends StatelessWidget {
-  const PostCard({super.key});
+  final String title;
+  final String body;
+  const PostCard({required this.title, required this.body,super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +28,19 @@ class PostCard extends StatelessWidget {
               Icon(Icons.person, color: Colors.grey),
               const SizedBox(width: 8,),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Title',
-                    style: TextStyle(
+                    title,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    'Body',
-                    style: TextStyle(
+                    body,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 12.0,
                     ),
