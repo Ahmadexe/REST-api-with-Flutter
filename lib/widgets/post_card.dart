@@ -22,30 +22,40 @@ class PostCard extends StatelessWidget {
             ],
             borderRadius: BorderRadius.circular(10.0),
           ),
-          height: MediaQuery.of(context).size.height * 0.15,
+          height: MediaQuery.of(context).size.height * 0.2,
           child: Row(
             children: [
               Icon(Icons.person, color: Colors.grey),
               const SizedBox(width: 8,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        title,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 5,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  Text(
-                    body,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12.0,
+                    Expanded(
+                      child: Text(
+                        body,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 5,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.0,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               )
             ],
           ),    
